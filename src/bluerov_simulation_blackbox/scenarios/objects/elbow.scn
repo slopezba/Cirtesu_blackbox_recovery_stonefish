@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<scenario>
+	<looks>
+		<look name="elbow" gray="1.0" roughness="0.2" metalness="0.0"
+			texture="$(find cooperamos_simulation)/resources/objects/elbow/elbow_tex.png" />
+	</looks>
+
+	<dynamic name="$(arg name)" physics="submerged" type="compound">
+		<external_part name="$(arg name)_corner" type="model" physics="submerged">
+			<physical>
+				<mesh filename="$(find cooperamos_simulation)/resources/objects/elbow/elbow_corner_phy.obj"
+						scale="1.0" />
+				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			</physical>
+			<visual>
+				<mesh filename="$(find cooperamos_simulation)/resources/objects/elbow/elbow_corner_vis.obj"
+						scale="1.0" />
+				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			</visual>
+			<material name="Fiberglass" />
+			<look name="elbow" />
+			<compound_transform xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+		</external_part>
+		<external_part name="$(arg name)_leg1" type="model" physics="submerged">
+			<physical>
+				<mesh filename="$(find cooperamos_simulation)/resources/objects/elbow/elbow_leg_phy.obj"
+						scale="1.0" />
+				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			</physical>
+			<visual>
+				<mesh filename="$(find cooperamos_simulation)/resources/objects/elbow/elbow_leg1_vis.obj"
+						scale="1.0" />
+				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			</visual>
+			<material name="Fiberglass" />
+			<look name="elbow" />
+			<compound_transform xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+		</external_part>
+		<external_part name="$(arg name)_leg2" type="model" physics="submerged">
+			<physical>
+				<mesh filename="$(find cooperamos_simulation)/resources/objects/elbow/elbow_leg_phy.obj"
+						scale="1.0" />
+				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${pi/2}"/>
+			</physical>
+			<visual>
+				<mesh filename="$(find cooperamos_simulation)/resources/objects/elbow/elbow_leg2_vis.obj"
+						scale="1.0" />
+				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			</visual>
+			<material name="Fiberglass" />
+			<look name="elbow" />
+			<compound_transform xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+		</external_part>
+
+
+		<world_transform xyz="$(arg xyz)" rpy="$(arg rpy)"/>
+	</dynamic>
+	
+</scenario>

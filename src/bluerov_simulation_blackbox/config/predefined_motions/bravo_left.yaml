@@ -1,0 +1,77 @@
+predefined_positions:
+  deploy:
+    joint_names:
+      - "girona1000/bravo_left/joint1"
+      - "girona1000/bravo_left/joint2"
+      - "girona1000/bravo_left/joint3"
+      - "girona1000/bravo_left/joint4"
+      - "girona1000/bravo_left/joint5"
+      - "girona1000/bravo_left/joint6"
+    positions: [0.0, 0.7853, -0.7853, 0.0, -1.57, 0.0]
+
+predefined_trajectories:
+  say_hi:
+    joint_names:
+      - "girona1000/bravo_left/joint1"
+      - "girona1000/bravo_left/joint2"
+      - "girona1000/bravo_left/joint3"
+      - "girona1000/bravo_left/joint4"
+      - "girona1000/bravo_left/joint5"
+      - "girona1000/bravo_left/joint6"
+    points:
+      - positions: [0.0, 0.9, 0.7, 0.0, -1.6, 0.0]
+        velocities: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        time_from_start: {secs: 2.0, nsecs: 0.0}
+      - positions: [0.0, 0.7, 0.4, 0.0, -1.3, 0.0]
+        velocities: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        time_from_start: {secs: 4.0, nsecs: 0.0}
+      - positions: [0.0, 1.1, 1.0, 0.0, -1.9, 0.0]
+        velocities: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        time_from_start: {secs: 7.0, nsecs: 0.0}
+      - positions: [0.0, 0.7, 0.4, 0.0, -1.3, 0.0]
+        velocities: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        time_from_start: {secs: 10.0, nsecs: 0.0}
+      - positions: [0.0, 1.1, 1.0, 0.0, -1.9, 0.0]
+        velocities: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        time_from_start: {secs: 13.0, nsecs: 0.0}
+      - positions: [0.0, 0.9, 0.7, 0.0, -1.6, 0.0]
+        velocities: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        time_from_start: {secs: 15.0, nsecs: 0.0}
+
+  unfold:
+    joint_names:
+      - "girona1000/bravo_left/joint1"
+      - "girona1000/bravo_left/joint2"
+      - "girona1000/bravo_left/joint3"
+      - "girona1000/bravo_left/joint4"
+      - "girona1000/bravo_left/joint5"
+      - "girona1000/bravo_left/joint6"
+    points:
+      - positions: [3.0, -0.05, -1.51, 0.0, -3.1, 1.9]
+        velocities: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        time_from_start: {secs: 1.0, nsecs: 0.0}
+      - positions: [2.12, 0.370, -0.97, 1.41, -2.61, 2.035]
+        velocities: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+        time_from_start: {secs: 3.0, nsecs: 0.0}
+      - positions: [1.53, 0.824, -0.72, 1.70, -1.61, 0.358]
+        velocities: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        time_from_start: {secs: 6.0, nsecs: 0.0}
+
+  fold:
+    joint_names:
+      - "girona1000/bravo_left/joint1"
+      - "girona1000/bravo_left/joint2"
+      - "girona1000/bravo_left/joint3"
+      - "girona1000/bravo_left/joint4"
+      - "girona1000/bravo_left/joint5"
+      - "girona1000/bravo_left/joint6"
+    points:
+      - positions: [1.53, 0.824, -0.72, 1.70, -1.61, 0.358]
+        velocities: [0.0,  0.0, 0.0, 0.0, 0.0, 0.0]
+        time_from_start: {secs: 4.0, nsecs: 0.0}
+      - positions: [2.12, 0.370, -0.97, 1.41, -2.61, 2.035]
+        velocities: [-0.1, -0.1, -0.1, 0.1, -0.1, 0.1]
+        time_from_start: {secs: 8.0, nsecs: 0.0}
+      - positions: [3.0, -0.05, -1.51, 0.0, -3.1, 1.9]
+        velocities: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        time_from_start: {secs: 13.0, nsecs: 0.0}

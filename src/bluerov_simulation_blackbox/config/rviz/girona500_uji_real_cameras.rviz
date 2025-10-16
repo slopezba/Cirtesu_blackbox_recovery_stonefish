@@ -1,0 +1,382 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 0
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Ground Truth1/Shape1
+        - /TF1/Frames1
+      Splitter Ratio: 0.5882353186607361
+    Tree Height: 892
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+      - /Orbit1
+    Name: Views
+    Splitter Ratio: 0.5
+Preferences:
+  PromptSaveOnExit: true
+Toolbars:
+  toolButtonStyle: 2
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 127; 127; 127
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 100
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 1
+      Class: rviz/Axes
+      Enabled: true
+      Length: 1
+      Name: World origin
+      Radius: 0.07999999821186066
+      Reference Frame: world_ned
+      Show Trail: false
+      Value: true
+    - Angle Tolerance: 0.30000001192092896
+      Class: rviz/Odometry
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: false
+      Enabled: false
+      Keep: 10
+      Name: Ground Truth
+      Position Tolerance: 0.20000000298023224
+      Queue Size: 10
+      Shape:
+        Alpha: 1
+        Axes Length: 0.10000000149011612
+        Axes Radius: 0.009999999776482582
+        Color: 255; 25; 0
+        Head Length: 0.30000001192092896
+        Head Radius: 0.10000000149011612
+        Shaft Length: 1
+        Shaft Radius: 0.05000000074505806
+        Value: Axes
+      Topic: /girona1000/dynamics/odometry
+      Unreliable: false
+      Value: false
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        girona500/base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        girona500/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        girona500/bravo/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        girona500/bravo/camera_gripper:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        girona500/bravo/finger_large_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        girona500/bravo/finger_small_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        girona500/bravo/jaws_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        girona500/bravo/link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        girona500/bravo/link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        girona500/bravo/link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        girona500/bravo/link4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        girona500/bravo/link5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        girona500/bravo/link6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        girona500/bravo/push_rod_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        girona500/camera_front:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        girona500/camera_poster:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        girona500/dvl:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        girona500/dvl_altitude:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        girona500/gps:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        girona500/imu:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        girona500/imu_filter:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        girona500/pressure:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        girona500/thruster_0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        girona500/thruster_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        girona500/thruster_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        girona500/thruster_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        girona500/thruster_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+      Name: RobotModel
+      Robot Description: /girona500/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz/TF
+      Enabled: false
+      Filter (blacklist): ""
+      Filter (whitelist): ""
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        {}
+      Update Interval: 0
+      Value: false
+    - Class: rviz/Camera
+      Enabled: false
+      Image Rendering: background and overlay
+      Image Topic: /bluerov/camera/image_color
+      Name: Camera_front
+      Overlay Alpha: 0.5
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: false
+      Visibility:
+        Camera_front: true
+        Camera_poster: true
+        Grid: true
+        Ground Truth: true
+        Path: true
+        RobotModel: true
+        TF: true
+        Value: false
+        World origin: true
+        altitude: true
+      Zoom Factor: 1
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        cirtesu_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        poster_rectangular_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: cirtesu/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 25; 255; 0
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Lines
+      Line Width: 0.029999999329447746
+      Name: Path
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Queue Size: 10
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic: /iauv_planner/path
+      Unreliable: false
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 165; 165; 165
+    Default Light: true
+    Fixed Frame: world
+    Frame Rate: 60
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+  Value: true
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 15.854029655456543
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Field of View: 0.7853981852531433
+      Focal Point:
+        X: 0.250000536441803
+        Y: 0.22778815031051636
+        Z: -0.357427716255188
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 1.1547982692718506
+      Target Frame: girona500/base_link
+      Yaw: 3.1147797107696533
+    Saved:
+      - Class: rviz/Orbit
+        Distance: 5.901301860809326
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Field of View: 0.7853981852531433
+        Focal Point:
+          X: 0.8673690557479858
+          Y: 6.060654640197754
+          Z: -4.551715850830078
+        Focal Shape Fixed Size: false
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: Orbit
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 0.42539793252944946
+        Target Frame: girona500/base_link
+        Yaw: 5.023582458496094
+Window Geometry:
+  Camera_front:
+    collapsed: false
+  Camera_gripper:
+    collapsed: false
+  Camera_poster:
+    collapsed: false
+  Displays:
+    collapsed: false
+  Height: 1043
+  Hide Left Dock: false
+  Hide Right Dock: false
+  QMainWindow State: 000000ff00000000fd000000020000000000000160000003b9fc0200000011fb000000100044006900730070006c006100790073010000003d000003b9000000c900fffffffb0000001800460072006f006e0074002000430061006d006500720061010000003d0000014e0000000000000000fb0000001c0047007200690070007000650072002000430061006d00650072006100000001720000014d0000000000000000fb0000000a0049006d006100670065000000003d000003050000000000000000fb0000000a0049006d006100670065010000003a000005660000000000000000fb0000000a005600690065007700730200000496000001bd000002ea0000026cfb0000000a0049006d00610067006500000000280000043b0000000000000000fb0000001400530074006500720065006f004c00650066007400000001a9000000bc0000000000000000fb0000000c00430061006d00650072006100000003be000000d40000000000000000fb0000000c00430061006d006500720061000000047c000000160000000000000000fb0000000a0049006d00610067006500000003be000000d40000000000000000fb0000000c00430061006d006500720061000000047c000000160000000000000000fb00000008004d0053004900530000000179000001c90000000000000000fb0000000a0049006d006100670065010000019b000001450000000000000000fb0000000c00430061006d006500720061010000012d000002150000000000000000fb0000001600530074006500720065006f005200690067006800740000000206000000e90000000000000000fb0000001a00430061006d006500720061005f0070006f007300740065007200000002b3000001430000001600ffffff00000001000001de000003b9fc0200000008fb0000001800430061006d006500720061005f00660072006f006e0074010000003d000003b90000001600fffffffb0000001c00430061006d006500720061005f00670072006900700070006500720000000226000001d00000001600fffffffc0000003d000000240000000000fffffffa000000000100000002fb0000001c005000690070006500200044006500740065006300740069006f006e0000000000ffffffff0000000000000000fb0000001e00500061006e0065006c00200044006500740065006300740069006f006e00000006aa0000020b0000000000000000fb0000001e0041007200750063006f00200064006500740065006300740069006f006e00000002e6000001740000000000000000fb0000001e0041007200750063006f00200064006500740065006300740069006f006e0100000260000001350000000000000000fb0000000c00430061006d00650072006100000004a2000000160000000000000000fb0000000c00430061006d00650072006100000004b8000000160000000000000000fb0000000a0049006d00610067006500000001f90000017f000000000000000000000436000003b900000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Views:
+    collapsed: false
+  Width: 1920
+  X: 1920
+  Y: 0

@@ -1,0 +1,52 @@
+# Publish all joint states -----------------------------------
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+# Gripper Controllers ---------------------------------------
+finger1_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: girona1000/eca_5emicro_manipulator/finger1_joint
+    pid:
+      p: 1.0
+      i: 0.0
+      d: 0.0
+
+finger2_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: girona1000/eca_5emicro_manipulator/finger2_joint
+    pid:
+      p: 1.0
+      i: 0.0
+      d: 0.0
+  
+# Joint Controller -----------------------------------------
+joint_velocity_controller:
+  type: velocity_controllers/JointGroupVelocityController
+  joints:
+    - girona1000/eca_5emicro_manipulator/joint1
+    - girona1000/eca_5emicro_manipulator/joint2
+    - girona1000/eca_5emicro_manipulator/joint3
+    - girona1000/eca_5emicro_manipulator/joint4
+
+
+joint_trajectory_controller:
+  type: velocity_controllers/JointTrajectoryController
+  joints:
+    - girona1000/eca_5emicro_manipulator/joint1
+    - girona1000/eca_5emicro_manipulator/joint2
+    - girona1000/eca_5emicro_manipulator/joint3
+    - girona1000/eca_5emicro_manipulator/joint4
+  gains:
+    girona1000/eca_5emicro_manipulator/joint1: { p: 5.0, i: 0.0, d: 0.0, i_clamp_min: -1, i_clamp_max: 1 }
+    girona1000/eca_5emicro_manipulator/joint2: { p: 5.0, i: 0.0, d: 0.0, i_clamp_min: -1, i_clamp_max: 1 }
+    girona1000/eca_5emicro_manipulator/joint3: { p: 5.0, i: 0.0, d: 0.0, i_clamp_min: -1, i_clamp_max: 1 }
+    girona1000/eca_5emicro_manipulator/joint4: { p: 5.0, i: 0.0, d: 0.0, i_clamp_min: -1, i_clamp_max: 1 }
+
+  constraints:
+    goal_time: 0.5                   
+    stopped_velocity_tolerance: 0.001 
+    girona1000/eca_5emicro_manipulator/joint1: { trajectory: 0.05, goal: 0.05 }
+    girona1000/eca_5emicro_manipulator/joint2: { trajectory: 0.05, goal: 0.05 }
+    girona1000/eca_5emicro_manipulator/joint3: { trajectory: 0.05, goal: 0.05 }
+    girona1000/eca_5emicro_manipulator/joint4: { trajectory: 0.05, goal: 0.05 }      

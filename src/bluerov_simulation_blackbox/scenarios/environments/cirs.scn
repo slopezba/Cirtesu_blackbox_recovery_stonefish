@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<scenario>
+    <environment>
+        <ned latitude="41.96732" longitude="2.83618" />
+        <ocean />
+        <atmosphere>
+            <sun azimuth="-108.0" elevation="50.0" />
+        </atmosphere>
+    </environment>
+
+    <looks>
+        <look name="cirs_tank" gray="1.00" roughness="1.0" texture="cirs/tank_tex.png" />
+    </looks>
+
+    <static name="Tank" type="model">
+        <physical>
+            <mesh filename="cirs/tank_phy.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+        </physical>
+        <visual>
+            <mesh filename="cirs/tank.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+        </visual>
+        <material name="Rock" />
+        <look name="cirs_tank" />
+        <world_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </static>
+
+</scenario>

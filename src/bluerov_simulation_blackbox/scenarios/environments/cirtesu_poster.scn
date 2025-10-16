@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<scenario>
+    <environment>
+        <ned latitude="39.9944" longitude="-0.0741" />
+        <ocean />
+        <atmosphere>
+            <sun azimuth="-108.0" elevation="50.0" />
+        </atmosphere>
+    </environment>
+    
+    <materials>
+		<material name="Neutral" density="1000.0" restitution="0.5"/>
+    </materials>
+
+    <looks>
+        <look name="cirtesu_tank" gray="1.0" roughness="0.2" metalness="0.0" texture="cirtesu/tank_tex.png" />
+        <look name="poster" gray="1.0" roughness="0.8" texture="cirtesu/poster_pool_small.png"/>
+    </looks>
+    
+    <static name="Poster" type="box">
+		<dimensions xyz="3.5 7.5 0.05"/>
+		<material name="Netural"/>
+		<look name="poster" uv_mode="1"/>
+		<world_transform rpy="0.0 0.0 1.578" xyz="1.0 0.0 4.8"/>
+   </static>
+
+    <static name="Tank" type="model">
+        <physical>
+            <mesh filename="cirtesu/tank_phy.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+        </physical>
+        <visual>
+            <mesh filename="cirtesu/tank_vis.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+        </visual>
+        <material name="Rock" />
+        <look name="cirtesu_tank" />
+        <world_transform rpy="0.0 0.0 3.1416" xyz="0.0 0.0 0.0" />
+    </static>
+
+</scenario>

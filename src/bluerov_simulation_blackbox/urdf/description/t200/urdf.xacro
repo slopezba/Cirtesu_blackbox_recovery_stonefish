@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="t200_urdf" params="prefix id parent *origin ccw:=^false">
+
+    <link name="${prefix}Thruster_${id}">
+      <inertial>
+        <mass value="0.002" />
+        <inertia
+          ixx="0.001"
+          ixy="0"
+          ixz="0"
+          iyy="0.001"
+          iyz="0"
+          izz="0.001"
+        />
+      </inertial>
+      <visual>
+        <xacro:if value="${ccw}">
+          <geometry>
+            <mesh filename="file://$(find bluerov_simulation)/urdf/meshes/t200/ccw_prop.dae" />
+          </geometry>
+        </xacro:if>
+        <xacro:unless value="${ccw}">
+          <geometry>
+            <mesh filename="file://$(find bluerov_simulation)/urdf/meshes/t200/cw_prop.dae" />
+          </geometry>
+        </xacro:unless>
+        <origin rpy="-1.571 0 0" xyz="0 0 0" />
+      </visual>
+    </link>
+
+    <joint name="${prefix}Thruster_${id}" type="continuous">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}" />
+      <child link="${prefix}Thruster_${id}" />
+      <axis xyz="0 0 -1" />
+      <limit effort="-1" velocity="-1" />
+    </joint>
+
+  </xacro:macro>
+</robot>

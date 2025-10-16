@@ -1,0 +1,436 @@
+<?xml version="1.0"?>
+<scenario>
+	<looks>
+		<look name="girona1000_hull_bottom" gray="1.0" roughness="0.2" metalness="0.0"
+			texture="$(find girona1000_description)/resources/textures/hull_bottom_tex.png" />
+		<look name="girona1000_hull_port" gray="1.0" roughness="0.2" metalness="0.0"
+			texture="$(find girona1000_description)/resources/textures/hull_port_tex.png" />
+		<look name="girona1000_hull_starboard" gray="1.0" roughness="0.2" metalness="0.0"
+			texture="$(find girona1000_description)/resources/textures/hull_starboard_tex.png" />
+		<look name="girona1000_tbar" gray="1.0" roughness="0.4" metalness="0.5"
+			texture="$(find girona1000_description)/resources/textures/tbar_tex.png" />
+		<look name="girona1000_anodized_light" gray="0.4" roughness="0.5" metalness="1.0" />
+		<look name="girona1000_duct" gray="1.0" roughness="0.5" metalness="1.0"
+			texture="$(find girona1000_description)/resources/textures/thruster_duct_tex.png" />
+		<look name="girona1000_propeller" gray="1.0" roughness="0.3"
+			texture="$(find girona1000_description)/resources/textures/thruster_propeller_tex.png" />
+		<look name="girona1000_black" gray="0.02" roughness="0.2" />
+		<look name="girona1000_dvl" gray="1.0" roughness="0.2" metalness="1.0"
+			texture="$(find girona1000_description)/resources/textures/dvl_tex.png" />
+		<look name="rb7_black" gray="0.01" roughness="0.3" metalness="0.2" />
+	</looks>
+
+	<robot name="$(arg robot_name)" fixed="false" self_collisions="false">
+		<!-- Mechanical structure of the robot -->
+		<base_link name="Vehicle" type="compound" physics="submerged">
+			<external_part name="HullBottom" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/hull_bottom_phy.obj"
+						scale="1.0" />
+					<thickness value="0.002" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</physical>
+				<visual>
+					<mesh filename="$(find girona1000_description)/resources/meshes/hull_bottom_bravos_vis.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</visual>
+				<material name="Fiberglass" />
+				<look name="girona1000_hull_bottom" />
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.552" />
+			</external_part>
+
+			<external_part name="HullPort" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="$(find girona1000_description)/resources/meshes/hull_phy.obj"
+						scale="1.0" />
+					<thickness value="0.002" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</physical>
+				<visual>
+					<mesh filename="$(find girona1000_description)/resources/meshes/hull_port.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</visual>
+				<material name="Fiberglass" />
+				<look name="girona1000_hull_port" />
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 -0.35 -0.1475" />
+			</external_part>
+
+			<external_part name="HullStarboard" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="$(find girona1000_description)/resources/meshes/hull_phy.obj"
+						scale="1.0" />
+					<thickness value="0.002" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</physical>
+				<visual>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/hull_starboard.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</visual>
+				<material name="Fiberglass" />
+				<look name="girona1000_hull_starboard" />
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.35 -0.1475" />
+			</external_part>
+
+			<external_part name="TBarBow" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="$(find girona1000_description)/resources/meshes/tbar_phy.obj"
+						scale="1.0" />
+					<thickness value="0.003" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</physical>
+				<visual>
+					<mesh filename="$(find girona1000_description)/resources/meshes/tbar.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</visual>
+				<material name="Aluminium" />
+				<look name="girona1000_tbar" />
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.275 0.0 0.0" />
+			</external_part>
+
+			<external_part name="TBarStern" type="model" physics="submerged" buoyant="false">
+				<physical>
+					<mesh filename="$(find girona1000_description)/resources/meshes/tbar_phy.obj"
+						scale="1.0" />
+					<thickness value="0.003" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</physical>
+				<visual>
+					<mesh filename="$(find girona1000_description)/resources/meshes/tbar.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</visual>
+				<material name="Aluminium" />
+				<look name="girona1000_tbar" />
+				<compound_transform rpy="0.0 0.0 3.14159" xyz="-0.275 0.0 0.0" />
+			</external_part>
+
+			<external_part name="ThrusterSupportSway" type="model" physics="submerged">
+				<physical>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/thrusters_support_sway_phy.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</physical>
+				<visual>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/thrusters_support_sway.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</visual>
+				<material name="Aluminium" />
+				<look name="girona1000_anodized_light" />
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+			</external_part>
+
+			<external_part name="ThrusterSupportSurge" type="model" physics="submerged">
+				<physical>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/thrusters_support_surge_phy.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</physical>
+				<visual>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/thrusters_support_surge.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</visual>
+				<material name="Aluminium" />
+				<look name="girona1000_anodized_light" />
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+			</external_part>
+
+			<external_part name="DuctSway" type="model" physics="submerged">
+				<physical>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/thruster_duct_phy.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</physical>
+				<visual>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/thruster_duct_v.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</visual>
+				<material name="Neutral" />
+				<mass value="4.3" />
+				<look name="girona1000_duct" />
+				<compound_transform rpy="0.0 0.0 -1.571" xyz="-0.0388 0.0307 0.16" />
+			</external_part>
+
+			<external_part name="DuctSurgePort" type="model" physics="submerged">
+				<physical>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/thruster_duct_phy.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</physical>
+				<visual>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/thruster_duct_v.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</visual>
+				<material name="Neutral" />
+				<mass value="4.3" />
+				<look name="girona1000_duct" />
+				<compound_transform rpy="0.0 0.0 0.0" xyz="-0.3058 -0.2587 0.16" />
+			</external_part>
+
+			<external_part name="DuctSurgeStarboard" type="model" physics="submerged">
+				<physical>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/thruster_duct_phy.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</physical>
+				<visual>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/thruster_duct_v.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</visual>
+				<material name="Neutral" />
+				<mass value="4.3" />
+				<look name="girona1000_duct" />
+				<compound_transform rpy="3.1416 0.0 0.0" xyz="-0.3058 0.2587 0.16" />
+			</external_part>
+
+			<external_part name="DuctHeaveBow" type="model" physics="submerged">
+				<physical>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/thruster_duct_phy.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</physical>
+				<visual>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/thruster_duct_v.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</visual>
+				<material name="Neutral" />
+				<mass value="4.3" />
+				<look name="girona1000_duct" />
+				<compound_transform rpy="0.0 -1.571 1.571" xyz="0.5586 0.0 -0.121" />
+			</external_part>
+
+			<external_part name="DuctHeaveStern" type="model" physics="submerged">
+				<physical>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/thruster_duct_phy.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</physical>
+				<visual>
+					<mesh
+						filename="$(find girona1000_description)/resources/meshes/thruster_duct_v.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</visual>
+				<material name="Neutral" />
+				<mass value="4.3" />
+				<look name="girona1000_duct" />
+				<compound_transform rpy="0.0 -1.571 -1.571" xyz="-0.5586 0.0 -0.121" />
+			</external_part>
+
+			<external_part name="Antenna" type="model" physics="submerged">
+				<physical>
+					<mesh filename="$(find girona1000_description)/resources/meshes/antenna_phy.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</physical>
+				<visual>
+					<mesh filename="$(find girona1000_description)/resources/meshes/antenna.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</visual>
+				<material name="Fiberglass" />
+				<look name="girona1000_black" />
+				<compound_transform rpy="0.0 0.0 0.0" xyz="-0.454 -0.35 -0.3" />
+			</external_part>
+
+			<external_part name="ModemDome" type="model" physics="submerged">
+				<physical>
+					<mesh filename="$(find girona1000_description)/resources/meshes/modem.obj"
+						scale="1.0" />
+					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				</physical>
+				<material name="Fiberglass" />
+				<look name="girona1000_black" />
+				<compound_transform rpy="0.0 0.0 0.0" xyz="0.144 0.35 -0.312" />
+			</external_part>
+
+
+			<internal_part name="BatteryCylinder" type="cylinder" physics="submerged" buoyant="true">
+				<dimensions radius="0.13" height="0.6" />
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				<material name="Neutral" />
+				<mass value="60.0" />
+				<look name="girona500_gray" />
+				<compound_transform rpy="0.0 1.571 0.0" xyz="-0.099 0.0 0.571" />
+			</internal_part>
+
+			<internal_part name="PayloadCylinder" type="cylinder" physics="submerged" buoyant="true">
+				<dimensions radius="0.13" height="0.22" />
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				<material name="Neutral" />
+				<mass value="20.0" />
+				<look name="girona500_gray" />
+				<compound_transform rpy="0.0 1.571 0.0" xyz="0.35 0.0 0.571" />
+			</internal_part>
+
+			<internal_part name="PortCylinder" type="cylinder" physics="submerged" buoyant="true">
+				<dimensions radius="0.13" height="1.05" />
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				<material name="Neutral" />
+				<mass value="20.0" />
+				<look name="girona500_gray" />
+				<compound_transform rpy="0.0 1.571 0.0" xyz="0.0 -0.35 -0.1475" />
+			</internal_part>
+
+			<internal_part name="StarboardCylinder" type="cylinder" physics="submerged"
+				buoyant="true">
+				<dimensions radius="0.13" height="1.05" />
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+				<material name="Neutral" />
+				<mass value="20.0" />
+				<look name="girona500_gray" />
+				<compound_transform rpy="0.0 1.571 0.0" xyz="0.0 0.35 -0.1475" />
+			</internal_part>
+		</base_link>
+
+		<!-- Sensors -->
+		<sensor name="dynamics" type="odometry" rate="100.0">
+			<link name="Vehicle" />
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.214" />
+			<ros_publisher topic="/$(arg robot_name)/dynamics/odometry" />
+		</sensor>
+
+		<sensor name="pressure" type="pressure" rate="5.0">
+			<link name="Vehicle" />
+			<origin rpy="0.0 0.0 0.0" xyz="-0.4561 0.35 -0.2073" />
+			<noise pressure="5.0" />
+			<ros_publisher topic="/$(arg robot_name)/navigator/pressure" />
+		</sensor>
+
+		<sensor name="dvl" type="dvl" rate="8.0">
+			<link name="Vehicle" />
+			<origin rpy="0.0 0.0 3.14159" xyz="-0.655 0.0 0.65" />
+			<specs beam_angle="25.0" beam_positive_z="true" />
+			<range velocity="9.0 9.0 9.0" altitude_min="0.5" altitude_max="75.0" />
+			<noise velocity="0.0015" altitude="0.001" />
+			<visual filename="$(find girona1000_description)/resources/meshes/dvl.obj" scale="1.0"
+				look="girona1000_dvl" />
+			<ros_publisher topic="/$(arg robot_name)/navigator/dvl"
+				altitude_topic="/$(arg robot_name)/navigator/altitude" />
+		</sensor>
+
+		<sensor name="gps" type="gps" rate="1.0">
+			<link name="Vehicle" />
+			<origin rpy="0.0 0.0 0.0" xyz="-0.455 -0.35 -0.54" />
+			<noise ned_position="0.005" />
+			<ros_publisher topic="/$(arg robot_name)/navigator/gps" />
+		</sensor>
+
+		<sensor name="ins" type="ins" rate="100.0">
+			<link name="Vehicle" />
+			<origin rpy="3.14159 0.0 3.14159" xyz="0.249 0.377 -0.070" />
+			<output_frame rpy="3.14159 0.0 3.1459" xyz="0.249 -0.377 -0.284" />
+			<noise angular_velocity="0.00001745" linear_acceleration="0.0005" />
+			<external_sensors dvl="dvl" gps="gps" pressure="pressure" />
+			<ros_publisher topic="/$(arg robot_name)/navigator/navigation_sim"
+				odometry_topic="/$(arg robot_name)/navigator/odometry" />
+		</sensor>
+
+
+		<sensor name="xiroi/stereo_ch3/left_optical" type="camera" rate="10.0">
+			<link name="Vehicle" />
+			<origin rpy="0.0 0.0 ${pi/2}" xyz="0.2 -0.048 0.76" />
+			<specs resolution_x="2048" resolution_y="1536" horizontal_fov="39.87" />
+			<ros_publisher topic="/$(arg robot_name)/xiroi/stereo_ch3/left_optical" />
+		</sensor>
+
+		<sensor name="xiroi/stereo_ch3/right_optical" type="camera" rate="10.0">
+			<link name="Vehicle" />
+			<origin rpy="0.0 0.0 ${pi/2}" xyz="0.2 0.048 0.76" />
+			<specs resolution_x="2048" resolution_y="1536" horizontal_fov="39.87" />
+			<ros_publisher topic="/$(arg robot_name)/xiroi/stereo_ch3/right_optical" />
+		</sensor>
+
+		<!-- Thrusters -->
+		<actuator name="ThrusterSurgePort" type="thruster">
+			<link name="Vehicle" />
+			<origin rpy="3.1416 0.0 0.0" xyz="-0.3058 -0.2587 0.16" />
+			<specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="true" />
+			<propeller diameter="0.18" right="true">
+				<mesh filename="$(find girona1000_description)/resources/meshes/propeller.obj"
+					scale="1.0" />
+				<material name="Neutral" />
+				<look name="girona1000_propeller" />
+			</propeller>
+		</actuator>
+
+		<actuator name="ThrusterSurgeStarboard" type="thruster">
+			<link name="Vehicle" />
+			<origin rpy="0.0 0.0 0.0" xyz="-0.3058 0.2587 0.16" />
+			<specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="true" />
+			<propeller diameter="0.18" right="true">
+				<mesh filename="$(find girona1000_description)/resources/meshes/propeller.obj"
+					scale="1.0" />
+				<material name="Neutral" />
+				<look name="girona1000_propeller" />
+			</propeller>
+		</actuator>
+
+		<actuator name="ThrusterHeaveBow" type="thruster">
+			<link name="Vehicle" />
+			<origin rpy="0.0 -1.571 1.571" xyz="0.5586 0.0 -0.121" />
+			<specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="true" />
+			<propeller diameter="0.18" right="true">
+				<mesh filename="$(find girona1000_description)/resources/meshes/propeller.obj"
+					scale="1.0" />
+				<material name="Neutral" />
+				<look name="girona1000_propeller" />
+			</propeller>
+		</actuator>
+
+		<actuator name="ThrusterHeaveStern" type="thruster">
+			<link name="Vehicle" />
+			<origin rpy="0.0 -1.571 -1.571" xyz="-0.5586 0.0 -0.121" />
+			<specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="true" />
+			<propeller diameter="0.18" right="true">
+				<mesh filename="$(find girona1000_description)/resources/meshes/propeller.obj"
+					scale="1.0" />
+				<material name="Neutral" />
+				<look name="girona1000_propeller" />
+			</propeller>
+		</actuator>
+
+		<actuator name="ThrusterSway" type="thruster">
+			<link name="Vehicle" />
+			<origin rpy="0.0 3.1416 1.571" xyz="-0.0388 0.0307 0.16" />
+			<specs thrust_coeff="0.48" torque_coeff="0.05" max_rpm="1000.0" inverted="true" />
+			<propeller diameter="0.18" right="true">
+				<mesh filename="$(find girona1000_description)/resources/meshes/propeller.obj"
+					scale="1.0" />
+				<material name="Neutral" />
+				<look name="girona1000_propeller" />
+			</propeller>
+		</actuator>
+
+
+		<world_transform rpy="0.0 0.0 $(arg start_yaw)" xyz="$(arg start_position)" />
+
+
+		<ros_subscriber thrusters="/$(arg robot_name)/controller/thruster_setpoints_sim" />
+		<ros_publisher thrusters="/$(arg robot_name)/controller/thruster_states" />
+	</robot>
+</scenario>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="bluerov2_heavy_urdf" params="use_sim">
+
+
+    <link name="bluerov2/base_link">
+      <inertial>
+        <origin rpy="3.1416 0 1.57" xyz="0.0 0.0 0.011" />
+        <mass value="13.0" />
+        <inertia
+          ixx="0.26"
+          ixy="0"
+          ixz="0"
+          iyy="0.23"
+          iyz="0"
+          izz="0.37"
+        />
+      </inertial>
+      <visual>
+        <geometry>
+          <mesh
+            filename="file://$(find bluerov_simulation)/urdf/meshes/bluerov2_heavy/bluerov2_heavy.dae"
+            scale="0.025 0.025 0.025"
+          />
+        </geometry>
+        <origin rpy="3.1416 0 1.57" xyz="0 0 0" />
+      </visual>
+      <collision name="base_link_collision">
+        <geometry>
+          <box size="0.457 0.575 0.05" />
+        </geometry>
+        <origin rpy="3.1416 0 1.57" xyz="0 0 0.06" />
+      </collision>
+    </link>
+
+    <!-- Import camera macro -->
+    <xacro:include filename="$(find bluerov_simulation_blackbox)/urdf/description/camera/urdf.xacro" />
+
+    <xacro:camera_urdf prefix="" parent="bluerov2/base_link">
+      <origin rpy="0 0 0" xyz="0.0 0.18 -0.06" />
+    </xacro:camera_urdf>
+    
+    <!-- Import T200 macro -->
+    <!-- <xacro:include filename="$(find bluerov_simulation)/urdf/description/t200/urdf.xacro" />
+
+    <xacro:t200_urdf prefix="bluerov2/" parent="bluerov2/base_link" ccw="true" id="R_FORWARD_FRONT">
+      <origin rpy="-1.571 1.571 -0.785" xyz="0.14 -0.092 0.0" />
+    </xacro:t200_urdf>
+
+    <xacro:t200_urdf prefix="bluerov2/" parent="bluerov2/base_link" ccw="true" id="R_FORWARD_REAR">
+      <origin rpy="-1.571 1.571 -2.356" xyz="0.14 0.092 0.0" />
+    </xacro:t200_urdf>
+
+    <xacro:t200_urdf prefix="bluerov2/" parent="bluerov2/base_link" ccw="true" id="L_FORWARD_FRONT">
+      <origin rpy="-1.571 1.571 0.785" xyz="-0.15 -0.092 0.0" />
+    </xacro:t200_urdf>
+
+    <xacro:t200_urdf prefix="bluerov2/" parent="bluerov2/base_link" ccw="false" id="L_FORWARD_REAR">
+      <origin rpy="-1.571 1.571 2.356" xyz="-0.15 0.092 0.0" />
+    </xacro:t200_urdf>
+
+    <xacro:t200_urdf prefix="bluerov2/" parent="bluerov2/base_link" ccw="true" id="R_VERTICAL_FRONT">
+      <origin rpy="0 0 0" xyz="0.118 -0.215 0.064" />
+    </xacro:t200_urdf>
+
+    <xacro:t200_urdf prefix="bluerov2/" parent="bluerov2/base_link" ccw="false" id="R_VERTICAL_REAR">
+      <origin rpy="0 0 0" xyz="0.118 0.215 0.064" />
+    </xacro:t200_urdf>
+
+    <xacro:t200_urdf prefix="bluerov2/" parent="bluerov2/base_link" ccw="false" id="L_VERTICAL_FRONT">
+      <origin rpy="0 0 0" xyz="-0.118 -0.215 0.064" />
+    </xacro:t200_urdf>
+
+    <xacro:t200_urdf prefix="bluerov2/" parent="bluerov2/base_link" ccw="true" id="L_VERTICAL_REAR">
+      <origin rpy="0 0 0" xyz="-0.118 0.215 0.064" />
+    </xacro:t200_urdf> -->
+
+
+  </xacro:macro>
+</robot>

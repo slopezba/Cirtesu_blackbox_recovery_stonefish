@@ -1,0 +1,45 @@
+# Publish all joint states -----------------------------------
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+# Gripper Controllers ---------------------------------------
+gripper_position_controller_finger_small:
+    type: velocity_controllers/JointPositionController
+    joint: bluerov2/gripper/joint1
+    pid:
+      p: 1.0
+      i: 0.0
+      d: 0.0
+
+gripper_position_controller_finger_large:
+    type: velocity_controllers/JointPositionController
+    joint: girona500/bravo/finger_large_joint
+    pid:
+      p: 1.0
+      i: 0.0
+      d: 0.0
+  
+# Joint Controller -----------------------------------------
+joint_velocity_controller:
+  type: velocity_controllers/JointGroupVelocityController
+  joints:
+    - bluerov2/gripper/joint1
+    - bluerov2/gripper/joint2
+
+
+joint_trajectory_controller:
+  type: velocity_controllers/JointTrajectoryController
+  joints:
+    - bluerov2/gripper/joint1
+    - bluerov2/gripper/joint2
+
+  gains:
+    bluerov2/joint1: { p: 5.0, i: 0.0, d: 0.0, i_clamp_min: -1, i_clamp_max: 1 }
+    bluerov2/joint2: { p: 5.0, i: 0.0, d: 0.0, i_clamp_min: -1, i_clamp_max: 1 }
+
+  constraints:
+    goal_time: 0.5                   
+    stopped_velocity_tolerance: 0.001 
+    bluerov2/joint1: { trajectory: 0.05, goal: 0.05 }
+    bluerov2/joint2: { trajectory: 0.05, goal: 0.05 }

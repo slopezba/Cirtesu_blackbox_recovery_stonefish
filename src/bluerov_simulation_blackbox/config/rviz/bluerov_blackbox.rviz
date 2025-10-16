@@ -1,0 +1,312 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 0
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Ground Truth1/Shape1
+        - /RobotModel1
+        - /TF1
+        - /TF1/Frames1
+        - /RobotModel2
+        - /RobotModel3
+      Splitter Ratio: 0.44638949632644653
+    Tree Height: 569
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+      - /Orbit1
+    Name: Views
+    Splitter Ratio: 0.5
+Preferences:
+  PromptSaveOnExit: true
+Toolbars:
+  toolButtonStyle: 2
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 127; 127; 127
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 100
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 1
+      Class: rviz/Axes
+      Enabled: false
+      Length: 1
+      Name: World origin
+      Radius: 0.07999999821186066
+      Reference Frame: world_ned
+      Show Trail: false
+      Value: false
+    - Angle Tolerance: 0.30000001192092896
+      Class: rviz/Odometry
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: false
+      Enabled: false
+      Keep: 10
+      Name: Ground Truth
+      Position Tolerance: 0.20000000298023224
+      Queue Size: 10
+      Shape:
+        Alpha: 1
+        Axes Length: 0.10000000149011612
+        Axes Radius: 0.009999999776482582
+        Color: 255; 25; 0
+        Head Length: 0.30000001192092896
+        Head Radius: 0.10000000149011612
+        Shaft Length: 1
+        Shaft Radius: 0.05000000074505806
+        Value: Axes
+      Topic: /girona1000/dynamics/odometry
+      Unreliable: false
+      Value: false
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        bluerov2/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_mount_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+      Name: RobotModel
+      Robot Description: /bluerov2/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 255; 255
+      Enabled: true
+      Name: altitude
+      Queue Size: 100
+      Topic: /cola2_perception/altitude
+      Unreliable: false
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Filter (blacklist): ""
+      Filter (whitelist): ""
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        blackbox/base_link:
+          Value: false
+        blackbox/ground_truth:
+          Value: true
+        blackbox_frame:
+          Value: true
+        bluerov2/base_link:
+          Value: true
+        camera_link:
+          Value: true
+        camera_mount_link:
+          Value: false
+        cirtesu_base_link:
+          Value: false
+        handle_frame:
+          Value: false
+        world:
+          Value: false
+        world_ned:
+          Value: false
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        world:
+          world_ned:
+            blackbox/base_link:
+              blackbox/ground_truth:
+                {}
+            bluerov2/base_link:
+              camera_mount_link:
+                camera_link:
+                  blackbox_frame:
+                    handle_frame:
+                      {}
+            cirtesu_base_link:
+              {}
+      Update Interval: 0
+      Value: true
+    - Class: rviz/InteractiveMarkers
+      Enable Transparency: true
+      Enabled: true
+      Name: InteractiveMarkers
+      Show Axes: false
+      Show Descriptions: true
+      Show Visual Aids: false
+      Update Topic: ""
+      Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        cirtesu_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: /cirtesu/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        blackbox/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        blackbox/ground_truth:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+      Name: RobotModel
+      Robot Description: /blackbox/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /blackbox_pose_img
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: compressed
+      Unreliable: false
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 165; 165; 165
+    Default Light: true
+    Fixed Frame: world
+    Frame Rate: 60
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+  Value: true
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 15.066608428955078
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Field of View: 0.7853981852531433
+      Focal Point:
+        X: -0.7244104146957397
+        Y: -0.1830710470676422
+        Z: -3.6602001190185547
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 0.019795536994934082
+      Target Frame: girona500/base_link
+      Yaw: 4.429751873016357
+    Saved:
+      - Class: rviz/Orbit
+        Distance: 5.901301860809326
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Field of View: 0.7853981852531433
+        Focal Point:
+          X: 0.8673690557479858
+          Y: 6.060654640197754
+          Z: -4.551715850830078
+        Focal Shape Fixed Size: false
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: Orbit
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 0.42539793252944946
+        Target Frame: girona500/base_link
+        Yaw: 5.023582458496094
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 986
+  Hide Left Dock: false
+  Hide Right Dock: false
+  Image:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd0000000200000000000002e400000380fc0200000014fb000000100044006900730070006c006100790073010000003d00000276000000c900fffffffb0000001800460072006f006e0074002000430061006d006500720061010000003d0000014e0000000000000000fb0000001c0047007200690070007000650072002000430061006d00650072006100000001720000014d0000000000000000fb0000000a0049006d00610067006501000002b9000001040000001600fffffffb0000000a0049006d00610067006500000002d9000000e40000000000000000fb0000000a0056006900650077007302000003a6000001ae000002ea0000026cfb0000000a0049006d00610067006500000000280000043b0000000000000000fb0000001400530074006500720065006f004c006500660074000000028b000001320000000000000000fb0000000c00430061006d00650072006100000003be000000d40000000000000000fb0000000c00430061006d006500720061000000047c000000160000000000000000fb0000000a0049006d00610067006500000003be000000d40000000000000000fb0000000c00430061006d006500720061000000047c000000160000000000000000fb00000008004d0053004900530000000179000001c90000000000000000fb0000000a0049006d006100670065010000019b000001450000000000000000fb0000000c00430061006d006500720061010000012d000002150000000000000000fb0000001600530074006500720065006f0052006900670068007401000002ed000000e60000000000000000fb0000000a0049006d006100670065010000024a000001730000000000000000fb0000000a0049006d00610067006500000002f4000000c90000000000000000fb0000000a0049006d00610067006501000001ef000001ce0000000000000000fb0000000a0049006d0061006700650100000246000001770000000000000000000000010000028500000305fc0200000006fc0000003d000000240000000000fffffffa000000000100000002fb0000001c005000690070006500200044006500740065006300740069006f006e0000000000ffffffff0000000000000000fb0000001e00500061006e0065006c00200044006500740065006300740069006f006e00000006aa0000020b0000000000000000fb0000001e0041007200750063006f00200064006500740065006300740069006f006e00000002e6000001740000000000000000fb0000001e0041007200750063006f00200064006500740065006300740069006f006e0100000260000001350000000000000000fb0000000c00430061006d00650072006100000004a2000000160000000000000000fb0000000c00430061006d00650072006100000004b8000000160000000000000000fb0000000a0049006d00610067006500000001f90000017f00000000000000000000035e0000038000000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Views:
+    collapsed: false
+  Width: 1608
+  X: 72
+  Y: 27

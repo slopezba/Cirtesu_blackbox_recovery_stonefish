@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<scenario>
+  <looks>
+    <look name="LookArriba" texture="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/fotos_bb/arriba.png" gray="1.0" roughness="0.2" metalness="0.0"/>
+    <look name="LookAbajo"  texture="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/fotos_bb/abajo.png"  gray="1.0" roughness="0.2" metalness="0.0"/>
+    <look name="LookDch"    texture="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/fotos_bb/dch.png"   gray="1.0" roughness="0.2" metalness="0.0"/>
+    <look name="LookIzq"    texture="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/fotos_bb/izq.png"   gray="1.0" roughness="0.2" metalness="0.0"/>
+    <look name="LookBack"   texture="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/fotos_bb/back.png"  gray="1.0" roughness="0.2" metalness="0.0"/>
+    <look name="LookFront"  texture="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/fotos_bb/front.png" gray="1.0" roughness="0.2" metalness="0.0"/>
+    <look name="black" rgb="0.0 0.0 0.0" roughness="1"/>
+  </looks>
+
+  <robot name="$(arg name)" fixed="false" self_collisions="false">
+    <base_link name="base_link" type="compound" physics="submerged" buoyant="true">
+
+      <!-- Tus external_part tal cual -->
+      <external_part name="arriba" type="model" physics="submerged" buoyant="true">
+        <physical>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/blackbox_minimal_uvn.obj" scale="1.0"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </physical>
+        <visual>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/arriba.obj" scale="1.0"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </visual>
+        <look name="LookArriba"/>
+        <material name="Fiberglass"/>
+        <compound_transform xyz="0 0 0" rpy="0 0 0"/>
+      </external_part>
+
+      <external_part name="abajo" type="model" physics="surface" buoyant="true">
+        <physical>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/abajo.obj" scale="0.01"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </physical>
+        <visual>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/abajo.obj" scale="1.0"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </visual>
+        <look name="LookAbajo"/>
+        <material name="Fiberglass"/>
+        <compound_transform xyz="0 0 0" rpy="0 0 0"/>
+      </external_part>
+
+      <external_part name="dch" type="model" physics="surface" buoyant="true">
+        <physical>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/abajo.obj" scale="0.01"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </physical>
+        <visual>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/dch.obj" scale="1.0"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </visual>
+        <look name="LookDch"/>
+        <material name="Fiberglass"/>
+        <compound_transform xyz="0 0 0" rpy="0 0 0"/>
+      </external_part>
+
+      <external_part name="izq" type="model" physics="surface" buoyant="true">
+        <physical>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/abajo.obj" scale="0.01"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </physical>
+        <visual>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/izq.obj" scale="1.0"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </visual>
+        <look name="LookIzq"/>
+        <material name="Fiberglass"/>
+        <compound_transform xyz="0 0 0" rpy="0 0 0"/>
+      </external_part>
+
+      <external_part name="front" type="model" physics="surface" buoyant="true">
+        <physical>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/abajo.obj" scale="0.01"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </physical>
+        <visual>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/front.obj" scale="1.0"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </visual>
+        <look name="LookFront"/>
+        <material name="Fiberglass"/>
+        <compound_transform xyz="0 0 0" rpy="0 0 0"/>
+      </external_part>
+
+      <external_part name="back" type="model" physics="surface" buoyant="true">
+        <physical>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/abajo.obj" scale="0.01"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </physical>
+        <visual>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/back.obj" scale="1.0"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </visual>
+        <look name="LookBack"/>
+        <material name="Fiberglass"/>
+        <compound_transform xyz="0 0 0" rpy="0 0 0"/>
+      </external_part>
+
+      <external_part name="mango" type="model" physics="surface" buoyant="true">
+        <physical>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/abajo.obj" scale="0.01"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </physical>
+        <visual>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/mango.obj" scale="1.0"/>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+        </visual>
+        <look name="black"/>
+        <material name="Fiberglass"/>
+        <compound_transform xyz="0 0 0" rpy="0 0 0"/>
+      </external_part>
+
+      <mass value="1.0"/>
+
+      <!-- Sensor de odometría anclado al link base -->
+      <sensor name="blackbox_odom" type="odometry" rate="20.0">
+        <link name="base_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <ros_publisher topic="/stonefish/blackbox/odom"/>
+      </sensor>
+
+    </base_link>
+
+    <!-- La pose inicial -->
+    <!-- para recto rpy="0.0 -1.57 0.0" -->
+    <world_transform xyz="1.0 1.0 3.0" rpy="0.0 -1.57 0.0"/>
+
+    <!-- Publicación de TF dinámico del base_link -->
+    <ros_base_link_transforms publish="true"/>
+  </robot>
+</scenario>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<scenario>
+    <environment>
+        <ned latitude="39.9944" longitude="-0.0741" />
+        <ocean />
+        <atmosphere>
+            <sun azimuth="-108.0" elevation="50.0" />
+        </atmosphere>
+    </environment>
+
+    <looks>
+        <look name="cirtesu_tank" gray="1.0" roughness="0.2" metalness="0.0" texture="cirtesu/tank_tex.png" />
+    </looks>
+
+    <static name="Tank" type="model">
+        <physical>
+            <mesh filename="cirtesu/tank_phy.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+        </physical>
+        <visual>
+            <mesh filename="cirtesu/tank_vis.obj" scale="1.0" />
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+        </visual>
+        <material name="Rock" />
+        <look name="cirtesu_tank" />
+        <world_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0" />
+    </static>
+
+</scenario>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="blackbox_from_scn">
+
+  <!-- Package inferred from SCN $(find bluerov_simulation_blackbox) -->
+  <xacro:property name="mesh_file" value="package://bluerov_simulation_blackbox/resources/objects/blackbox/blackbox.dae"/>
+
+  <!-- Uniform scale as in SCN (arriba had scale=1.0) -->
+  <xacro:property name="scale_x" value="1.0"/>
+  <xacro:property name="scale_y" value="1.0"/>
+  <xacro:property name="scale_z" value="1.0"/>
+
+  <link name="blackbox/base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.57 0 0"/>
+      <geometry>
+        <mesh filename="${mesh_file}" scale="${scale_x} ${scale_y} ${scale_z}"/>
+      </geometry>
+        <material name="mango_black">
+          <color rgba="0.0 0.0 0.0 1.0"/> <!-- negro -->
+        </material>
+    </visual>
+  </link>
+
+  <link name="blackbox/ground_truth">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+  </link>
+  <joint name="$blackbox_joint" type="fixed">
+    <origin xyz="-0.15 -0.07 0" rpy="1.57 0.0 1.57"/>
+    <parent link="blackbox/base_link" />
+    <child link="blackbox/ground_truth" />
+  </joint>
+</robot>

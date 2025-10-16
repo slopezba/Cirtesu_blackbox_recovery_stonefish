@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<scenario>
+	<looks>
+		<look name="pipe130" gray="1.0" roughness="0.2" metalness="0.0"
+			texture="$(find cooperamos_simulation)/resources/objects/pipe130/pipe_tex.png" />
+	</looks>
+
+	<dynamic name="$(arg name)" physics="submerged" type="compound">
+		<external_part name="$(arg name)" type="model" physics="submerged">
+			<physical>
+				<mesh filename="$(find cooperamos_simulation)/resources/objects/pipe130/pipe_phy.obj"
+						scale="1.0" />
+				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			</physical>
+			<visual>
+				<mesh filename="$(find cooperamos_simulation)/resources/objects/pipe130/pipe_vis.obj"
+						scale="1.0" />
+				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			</visual>
+			<material name="Fiberglass" />
+			<look name="pipe130" />
+			<compound_transform xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+		</external_part>
+
+		<world_transform xyz="$(arg xyz)" rpy="$(arg rpy)"/>
+	</dynamic>
+	
+</scenario>

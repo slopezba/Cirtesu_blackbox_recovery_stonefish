@@ -1,0 +1,60 @@
+# Publish all joint states -----------------------------------
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+# Gripper Controllers ---------------------------------------
+finger_small_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: girona1000/bravo_right/finger_small_joint
+    pid:
+      p: 1.0
+      i: 0.0
+      d: 0.0
+
+finger_large_position_controller:
+    type: velocity_controllers/JointPositionController
+    joint: girona1000/bravo_right/finger_large_joint
+    pid:
+      p: 1.0
+      i: 0.0
+      d: 0.0
+  
+# Joint Controller -----------------------------------------
+joint_velocity_controller:
+  type: velocity_controllers/JointGroupVelocityController
+  joints:
+    - girona1000/bravo_right/joint1
+    - girona1000/bravo_right/joint2
+    - girona1000/bravo_right/joint3
+    - girona1000/bravo_right/joint4
+    - girona1000/bravo_right/joint5
+    - girona1000/bravo_right/joint6
+
+
+joint_trajectory_controller:
+  type: velocity_controllers/JointTrajectoryController
+  joints:
+    - girona1000/bravo_right/joint1
+    - girona1000/bravo_right/joint2
+    - girona1000/bravo_right/joint3
+    - girona1000/bravo_right/joint4
+    - girona1000/bravo_right/joint5
+    - girona1000/bravo_right/joint6
+  gains:
+    girona1000/bravo_right/joint1: { p: 5.0, i: 0.0, d: 0.0, i_clamp_min: -1, i_clamp_max: 1 }
+    girona1000/bravo_right/joint2: { p: 5.0, i: 0.0, d: 0.0, i_clamp_min: -1, i_clamp_max: 1 }
+    girona1000/bravo_right/joint3: { p: 5.0, i: 0.0, d: 0.0, i_clamp_min: -1, i_clamp_max: 1 }
+    girona1000/bravo_right/joint4: { p: 5.0, i: 0.0, d: 0.0, i_clamp_min: -1, i_clamp_max: 1 }
+    girona1000/bravo_right/joint5: { p: 5.0, i: 0.0, d: 0.2, i_clamp_min: -1, i_clamp_max: 1 }
+    girona1000/bravo_right/joint6: { p: 5.0, i: 0.0, d: 0.2, i_clamp_min: -1, i_clamp_max: 1 }
+
+  constraints:
+    goal_time: 0.5                   
+    stopped_velocity_tolerance: 0.001 
+    girona1000/bravo_right/joint1: { trajectory: 0.05, goal: 0.05 }
+    girona1000/bravo_right/joint2: { trajectory: 0.05, goal: 0.05 }
+    girona1000/bravo_right/joint3: { trajectory: 0.05, goal: 0.05 }
+    girona1000/bravo_right/joint4: { trajectory: 0.05, goal: 0.05 }      
+    girona1000/bravo_right/joint5: { trajectory: 0.05, goal: 0.05 }
+    girona1000/bravo_right/joint6: { trajectory: 0.05, goal: 0.05 }

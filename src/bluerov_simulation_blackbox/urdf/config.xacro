@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot name="bluerov2" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Incluye solo el archivo de la macro -->
+  <xacro:include filename="$(find bluerov_simulation_blackbox)/urdf/urdf.xacro"/>
+
+  <!-- Llama a la macro -->
+  <xacro:bluerov2_heavy_urdf use_sim="true"/>
+
+</robot>

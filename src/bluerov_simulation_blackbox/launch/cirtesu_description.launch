@@ -1,0 +1,18 @@
+<launch>
+  <!-- Load cirtesu description -->
+  <group ns="cirtesu">
+    <param name="robot_description" 
+         command="$(find xacro)/xacro '$(find bluerov_simulation_blackbox)/urdf/cirtesu.urdf.xacro' 
+                     robot_namespace:=cirtesu" />
+                     
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+          output="screen">
+      <param name="publish_frequency" type="double" value="50.0"/>
+      <param name="robot_namespace" value="cirtesu"/>
+    </node>
+    
+      <!-- Static transform -->
+    <node name="nedtocirtesu" pkg="tf2_ros" type="static_transform_publisher"
+        args="0 0 0 3.1416 0 0 world_ned cirtesu_base_link" />
+  </group>
+</launch>

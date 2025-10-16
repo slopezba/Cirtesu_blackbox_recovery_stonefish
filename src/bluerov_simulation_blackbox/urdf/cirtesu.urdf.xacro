@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="cirtesu" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Define a material with a texture -->
+  <material name="cirtesu_material">
+    <texture filename="$(find girona500_description)/meshes/cirtesu/tank_tex.png"/>
+  </material>
+  <material name="poster_image">
+    <texture filename="$(find girona500_description)/meshes/cirtesu/poster_pool_small.png"/>
+  </material>
+  <material name="poster_material">
+    <color rgba="0 .5 0 1"/>
+  </material>
+
+  <!-- Define the base link with visual and collision elements -->
+  <link name="cirtesu_base_link">
+    <!-- Visual element using vis.obj and the defined material -->
+    <visual>
+      <origin xyz="0 0 0" rpy="3.1416 0 0"/>
+      <geometry>
+        <mesh filename="package://girona500_description/meshes/cirtesu.dae" scale="1 1 1"/>
+      </geometry>
+      <material name="poster_material"/>
+    </visual>
+  </link>
+
+</robot>
+
