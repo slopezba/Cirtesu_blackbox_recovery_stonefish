@@ -1,0 +1,7 @@
+<launch>
+  <!-- Nodo del joystick -->
+  <node pkg="joy" type="joy_node" name="joy_node" output="screen" />
+
+  <!-- Nodo de movimiento -->
+  <node pkg="control" type="movement.py" name="movement" output="screen" />
+</launch>

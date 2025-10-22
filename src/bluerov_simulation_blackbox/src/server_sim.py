@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Cmd_velocity subscriber for the bluerov, the script takes the velocities values and compute the PWM velocity of the motors
 The udp direction have to be eddited in this script and in the end point settings form the BlueOS
