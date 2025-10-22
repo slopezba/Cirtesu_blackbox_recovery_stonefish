@@ -68,6 +68,8 @@
             <remap from="/stonefish/blackbox/odom" to="blackbox_odom" />
         </node>
 
+        <node name="odom_to_tf" pkg="bluerov_simulation_blackbox" type="odom_to_tf.py" />
+
     </group>
 
 

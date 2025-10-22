@@ -13,10 +13,9 @@
   <robot name="$(arg name)" fixed="false" self_collisions="false">
     <base_link name="base_link" type="compound" physics="submerged" buoyant="true">
 
-      <!-- Tus external_part tal cual -->
       <external_part name="arriba" type="model" physics="submerged" buoyant="true">
         <physical>
-          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/blackbox_minimal_uvn.obj" scale="1.0"/>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/blackbox_bighandle.obj" scale="1.0"/>
           <origin xyz="0 0 0" rpy="0 0 0"/>
         </physical>
         <visual>
@@ -104,7 +103,7 @@
           <origin xyz="0 0 0" rpy="0 0 0"/>
         </physical>
         <visual>
-          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/mango.obj" scale="1.0"/>
+          <mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/big_handle.obj" scale="1.0"/>
           <origin xyz="0 0 0" rpy="0 0 0"/>
         </visual>
         <look name="black"/>

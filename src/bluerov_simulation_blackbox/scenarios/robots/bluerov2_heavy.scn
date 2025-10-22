@@ -239,7 +239,7 @@
 
 
 			<!--   WEIGHTS   -->
-			<!--<external_part name="WeightMiddleMiddle" type="model" physics="submerged" buoyant="false">
+			<!-- <external_part name="WeightMiddleMiddle" type="model" physics="submerged" buoyant="false">
 				<physical>
 					<mesh filename="bluerov2_heavy2/weight_middle_middle.obj" scale="1.0"/>
 					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -294,7 +294,7 @@
 				<mass value="0.2"/>
 				<look name="black"/>
 				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-			</external_part>-->
+			</external_part> -->
 			
 			<!--   LIGHTS  -->
 			<external_part name="Light_upL" type="model" physics="submerged" buoyant="false">
@@ -444,7 +444,7 @@
 		<link name="gripper_body" type="model" physics="submerged" buoyant="false">
 			<physical>
 				<mesh filename="bluerov2_heavy2/gripper_1.obj" scale="1.0"/>
-				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/> 
+				<origin rpy="0.0 0.0 0.0" xyz="0.0 0.1 0.0"/> 
 			</physical>
 			<material name="Polyamid"/>
 			<mass value="0.01"/>
@@ -491,7 +491,7 @@
 		<joint name="gripper/joint1" type="revolute">
 			<parent name="gripper_body" />
 			<child name="pinza_gripper_1" />
-			<origin rpy="0.0 0.0 0.12" xyz="0.0 0.23 0.065" />
+			<origin rpy="0.0 0.0 0.12" xyz="0.0 0.33 0.065" />
 			<axis xyz="1 0 0" />
 			<limits min="-3.1" max="3.1" />
 		</joint>
@@ -499,7 +499,7 @@
 		<joint name="gripper/joint2" type="revolute">
 			<parent name="gripper_body" />
 			<child name="pinza_gripper_2" />
-			<origin rpy="0.0 0.0 0.12" xyz="0.3 0.26 0.1" />
+			<origin rpy="0.0 0.0 0.12" xyz="0.3 0.36 0.1" />
 			<axis xyz="-1 0 0" />
 			<limits min="-3.1" max="3.1" />
 		</joint>
@@ -701,7 +701,7 @@
 		<!--   SENSORS   -->
 		<sensor name="dynamics" type="odometry" rate="100.0">
 			<link name="Vehicle"/>
-			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.214"/>
+			<origin rpy="0.0 0.0 1.57" xyz="0.0 0.0 0.0"/>
 			<!-- <ros_publisher topic="/$(arg robot_name)/dynamics/odometry"/> -->
 			<ros_publisher topic="/bluerov/navigator/odometry"/>
 		</sensor>
@@ -751,8 +751,8 @@
 		
 		<sensor name="camera" rate="20.0" type="camera">
 			<specs resolution_x="1200" resolution_y="800" horizontal_fov="90.0"/>
-			<!-- <origin xyz="0.0 0.18 0.0" rpy="1.6 0.0 3.1416"/> -->
 			<origin xyz="0.0 0.18 0.0" rpy="1.6 0.0 3.1416"/>
+			<!-- <origin xyz="0.0 0.18 0.0" rpy="1.4 0.0 3.1416"/> -->
 			<link name="Vehicle"/>
 			<ros_publisher topic="/bluerov/camera"/>
 		</sensor>
@@ -769,6 +769,6 @@
         <ros_subscriber servos="/$(arg robot_name)/servo_commands"/> -->
 		<ros_subscriber thrusters="/bluerov/controller/thruster_setpoints_sim" forces="/bluerov/controller/thruster_manager/input_stamped" servos="/$(arg robot_name)/servo_commands"/>
 		<ros_publisher thrusters="/bluerov/controller/thruster_state" forces="/bluerov/controller/thruster_manager/output" servos="/joint_states"/>
-		<ros_base_link_transforms publish="true"/>
+		<ros_base_link_transforms publish="false"/>
 	</robot>
 </scenario>
