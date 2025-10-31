@@ -42,6 +42,9 @@ Run the BlueROV2 simulation in a pipeline (pipe) environment:
 
 This will start the Stonefish visual simulator with the BlueROV2 model and automatically open RViz for visualization.
 
+![stonefish](images/stronefish_sim.png)
+![rviz](images/rviz.png)
+
 ## 🔗 Link with ArduSub (Control as a Real Robot)
 
 In another terminal, start ArduSub with the JSON model configuration and the correct communication ports:
@@ -67,6 +70,8 @@ Run the required simulation servers:
     rosrun bluerov_simulation_blackbox server_sim.py
     rosrun bluerov_simulation_blackbox server_sim.py
 
+Logitech F310 Controller Layout for ROV Control: \
+<img src="images/JOYSTICK.png" alt="Logitech F310 Controls" width="400">
 
 
 
