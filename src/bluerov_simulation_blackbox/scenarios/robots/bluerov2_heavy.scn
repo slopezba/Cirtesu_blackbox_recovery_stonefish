@@ -104,7 +104,7 @@
 				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
 			</external_part>
 
-			<external_part name="CameraDome" type="model" physics="submerged" buoyant="false">
+			<!-- <external_part name="CameraDome" type="model" physics="submerged" buoyant="false">
 				<physical>
 					<mesh filename="bluerov2_heavy2/dome.obj" scale="1.0"/>
 					<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -113,7 +113,7 @@
 				<look name="transparent"/>
 				<mass value="0.05"/>
 				<compound_transform rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-			</external_part>
+			</external_part> -->
 
 			<external_part name="LeftFoamEnclosure" type="model" physics="submerged" buoyant="false">
 				<physical>
@@ -454,18 +454,26 @@
 		
 		<link name="pinza_gripper_1" type="model" physics="submerged">
 				<physical>
-					<mesh filename="bluerov2_heavy2/gripper_3.obj" scale="1.0"/>
+					<mesh filename="bluerov2_heavy2/pinza1_phy.obj" scale="1.0"/>
 					<origin rpy="0.0 0.0 -0.12" xyz="-0.025 -0.23 -0.065" />
 				</physical>
+				<visual>
+					<mesh filename="bluerov2_heavy2/gripper_3.obj" scale="1.0"/>
+					<origin rpy="0.0 0.0 -0.12" xyz="-0.025 -0.23 -0.065" />
+        		</visual>
 				<material name="Polyamid"/>
 				<look name="black" />
 		</link>
 
 		<link name="pinza_gripper_2" type="model" physics="submerged" buoyant="false">
 			<physical>
-				<mesh filename="bluerov2_heavy2/gripper_2.obj" scale="1.0"/>
-				<origin rpy="0.0 0.0 -0.12" xyz="-0.325 -0.215 -0.1"/>
+				<mesh filename="bluerov2_heavy2/pinza2_phy.obj" scale="1.0"/>
+				<origin rpy="0.0 0.0 -0.12" xyz="-0.24 -0.23 -0.1"/>
 			</physical>
+			<visual>
+          		<mesh filename="bluerov2_heavy2/gripper_2.obj" scale="1.0"/>
+				<origin rpy="0.0 0.0 -0.12" xyz="-0.325 -0.215 -0.1"/>
+        	</visual>
 			<material name="Polyamid"/>
 			<mass value="0.001"/>
 			<look name="black"/>
@@ -506,7 +514,7 @@
 
 		<actuator name="gripper1" type="servo">
 			<joint name="gripper/joint1" />
-			<controller position_gain="1.0" velocity_gain="1.0" max_torque="100.0" />
+			<controller position_gain="1.0" velocity_gain="1.0" max_torque="10000.0" />
 			<initial position="-0.5"/>
 		</actuator>
 
@@ -518,7 +526,7 @@
 
 		<actuator name="gripper2" type="servo">
 			<joint name="gripper/joint2" />
-			<controller position_gain="1.0" velocity_gain="1.0" max_torque="100.0" />
+			<controller position_gain="1.0" velocity_gain="1.0" max_torque="10000.0" />
 			<initial position="-0.5"/>
 		</actuator>
 		<!--   THRUSTERS   -->
@@ -749,10 +757,18 @@
 			<ros_publisher topic="/bluerov/multibeam_link/scan" pcl_topic="/bluerov/multibeam_link/pcd"/>
 		</sensor> -->
 		
+		<sensor name="camera_gripper" rate="20.0" type="camera">
+			<specs resolution_x="960" resolution_y="540" horizontal_fov="82.0"/>
+			<origin xyz="0.01 0.33 0.08" rpy="1.6 0.0 3.08"/>
+			<!-- <origin xyz="0.0 0.18 0.0" rpy="1.4 0.0 3.1416"/> -->
+			<link name="Vehicle"/>
+			<ros_publisher topic="/bluerov/gripper/camera"/>
+		</sensor>
+
 		<sensor name="camera" rate="20.0" type="camera">
 			<specs resolution_x="1200" resolution_y="800" horizontal_fov="90.0"/>
-			<origin xyz="0.0 0.18 0.0" rpy="1.6 0.0 3.1416"/>
-			<!-- <origin xyz="0.0 0.18 0.0" rpy="1.4 0.0 3.1416"/> -->
+			<origin xyz="0.0 0.18 -0.03" rpy="1.6 0.0 3.1416"/>
+			<origin xyz="0.0 0.18 0.0" rpy="1.4 0.0 3.1416"/>
 			<link name="Vehicle"/>
 			<ros_publisher topic="/bluerov/camera"/>
 		</sensor>

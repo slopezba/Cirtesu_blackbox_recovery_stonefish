@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <scenario>
 	<looks>
-		<look name="pipe130" gray="1.0" roughness="0.2" metalness="0.0"
-			texture="$(find bluerov_simulation_blackbox)/resources/objects/pipe130/pipe_tex.png" />
+		<look name="frame" gray="1.0" roughness="0.2" metalness="0.0"
+			texture="$(find bluerov_simulation)/resources/objects/pipe130/pipe_tex.png" />
 	</looks>
 
 	<dynamic name="$(arg name)" physics="submerged" type="compound">
 		<external_part name="$(arg name)" type="model" physics="submerged">
 			<physical>
-				<mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/pipe130/pipe_phy.obj"
+				<mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/blackbox_bighandle.obj"
 						scale="1.0" />
 				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
 			</physical>
 			<visual>
-				<mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/pipe130/pipe_vis.obj"
+				<mesh filename="$(find bluerov_simulation_blackbox)/resources/objects/blackbox/blackbox_bighandle.obj"
 						scale="1.0" />
 				<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
 			</visual>
 			<material name="Fiberglass" />
-			<look name="pipe130" />
+			<look name="bb" />
 			<compound_transform xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
 		</external_part>
 
-		<world_transform xyz="$(arg xyz)" rpy="$(arg rpy)"/>
+		<world_transform xyz="1.0 1.0 3.0" rpy="0.0 -1.57 0.0"/>
 	</dynamic>
 	
 </scenario>
